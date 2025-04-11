@@ -122,21 +122,21 @@ output "configure_kubectl_command" {
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
-| <a name="provider_helm.eks_cluster"></a> [helm.eks\_cluster](#provider\_helm.eks_cluster) | ~> 2.9 |
-| <a name="provider_kubernetes.eks_cluster"></a> [kubernetes.eks\_cluster](#provider\_kubernetes.eks_cluster) | ~> 2.20 |
+| <a name="provider_helm.eks_cluster"></a> [helm.eks\_cluster](#provider\_helm.eks\_cluster) | ~> 2.9 |
+| <a name="provider_kubernetes.eks_cluster"></a> [kubernetes.eks\_cluster](#provider\_kubernetes.eks\_cluster) | ~> 2.20 |
 | <a name="provider_null"></a> [null](#provider\_null) | ~> 3.2 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ebs_csi_role"></a> [ebs\_csi\_role](#module\_ebs_csi_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | n/a |
+| <a name="module_ebs_csi_role"></a> [ebs\_csi\_role](#module\_ebs\_csi\_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | n/a |
 | <a name="module_eks"></a> [eks](#module\_eks) | terraform-aws-modules/eks/aws | ~> 19.0 |
 | <a name="module_iam"></a> [iam](#module\_iam) | ./modules/iam | n/a |
-| <a name="module_inbox_sns_notification"></a> [inbox\_sns\_notification](#module\_inbox_sns_notification) | ./modules/sns | n/a |
-| <a name="module_lb_role"></a> [lb\_role](#module\_lb_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | n/a |
-| <a name="module_s3_inbox"></a> [s3\_inbox](#module\_s3_inbox) | ./modules/s3 | n/a |
-| <a name="module_s3_lake"></a> [s3\_lake](#module\_s3_lake) | ./modules/s3 | n/a |
+| <a name="module_inbox_sns_notification"></a> [inbox\_sns\_notification](#module\_inbox\_sns\_notification) | ./modules/sns | n/a |
+| <a name="module_lb_role"></a> [lb\_role](#module\_lb\_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | n/a |
+| <a name="module_s3_inbox"></a> [s3\_inbox](#module\_s3\_inbox) | ./modules/s3 | n/a |
+| <a name="module_s3_lake"></a> [s3\_lake](#module\_s3\_lake) | ./modules/s3 | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | terraform-aws-modules/vpc/aws | ~> 5.0 |
 
 ## Resources
@@ -176,35 +176,35 @@ output "configure_kubectl_command" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_abort_incomplete_multipart_upload_days"></a> [abort\_incomplete\_multipart\_upload\_days](#input\_abort_incomplete_multipart_upload_days) | Number of days after which incomplete multipart uploads to S3 buckets will be aborted. | `number` | `5` | no |
-| <a name="input_eks_cluster_version"></a> [eks\_cluster\_version](#input\_eks_cluster_version) | Desired Kubernetes version for the EKS cluster. | `string` | `"1.29"` | no |
-| <a name="input_eks_node_group_desired_size"></a> [eks\_node\_group\_desired\_size](#input\_eks_node_group_desired_size) | Desired number of nodes in the default EKS managed node group. | `number` | `1` | no |
-| <a name="input_eks_node_group_max_size"></a> [eks\_node\_group\_max\_size](#input\_eks_node_group_max_size) | Maximum number of nodes in the default EKS managed node group. | `number` | `5` | no |
-| <a name="input_eks_node_group_min_size"></a> [eks\_node\_group\_min\_size](#input\_eks_node_group_min_size) | Minimum number of nodes in the default EKS managed node group. | `number` | `0` | no |
-| <a name="input_eks_node_instance_types"></a> [eks\_node\_instance\_types](#input\_eks_node_instance_types) | List of EC2 instance types for the default EKS managed node group. | `list(string)` | <pre>[<br>  "t3.medium"<br>]</pre> | no |
-| <a name="input_enable_monitoring"></a> [enable\_monitoring](#input\_enable_monitoring) | Set to true to deploy Prometheus and related monitoring components (requires EBS CSI driver). | `bool` | `false` | no |
-| <a name="input_foxglove_helm_chart_version"></a> [foxglove\_helm\_chart\_version](#input\_foxglove_helm_chart_version) | Version of the Foxglove 'primary-site' Helm chart to deploy. | `string` | `null` | no |
-| <a name="input_inbox_notification_endpoint"></a> [inbox\_notification\_endpoint](#input\_inbox_notification_endpoint) | The HTTPS endpoint obtained from your Foxglove Site settings for inbox notifications. | `string` | n/a | yes |
+| <a name="input_abort_incomplete_multipart_upload_days"></a> [abort\_incomplete\_multipart\_upload\_days](#input\_abort\_incomplete\_multipart\_upload\_days) | Number of days after which incomplete multipart uploads to S3 buckets will be aborted. | `number` | `5` | no |
+| <a name="input_eks_cluster_version"></a> [eks\_cluster\_version](#input\_eks\_cluster\_version) | Desired Kubernetes version for the EKS cluster. | `string` | `"1.29"` | no |
+| <a name="input_eks_node_group_desired_size"></a> [eks\_node\_group\_desired\_size](#input\_eks\_node\_group\_desired\_size) | Desired number of nodes in the default EKS managed node group. | `number` | `1` | no |
+| <a name="input_eks_node_group_max_size"></a> [eks\_node\_group\_max\_size](#input\_eks\_node\_group\_max\_size) | Maximum number of nodes in the default EKS managed node group. | `number` | `5` | no |
+| <a name="input_eks_node_group_min_size"></a> [eks\_node\_group\_min\_size](#input\_eks\_node\_group\_min\_size) | Minimum number of nodes in the default EKS managed node group. | `number` | `0` | no |
+| <a name="input_eks_node_instance_types"></a> [eks\_node\_instance\_types](#input\_eks\_node\_instance\_types) | List of EC2 instance types for the default EKS managed node group. | `list(string)` | <pre>[<br/>  "t3.medium"<br/>]</pre> | no |
+| <a name="input_enable_monitoring"></a> [enable\_monitoring](#input\_enable\_monitoring) | Set to true to deploy Prometheus and related monitoring components (requires EBS CSI driver). | `bool` | `false` | no |
+| <a name="input_foxglove_helm_chart_version"></a> [foxglove\_helm\_chart\_version](#input\_foxglove\_helm\_chart\_version) | Version of the Foxglove 'primary-site' Helm chart to deploy. | `string` | `null` | no |
+| <a name="input_inbox_notification_endpoint"></a> [inbox\_notification\_endpoint](#input\_inbox\_notification\_endpoint) | The HTTPS endpoint obtained from your Foxglove Site settings for inbox notifications. | `string` | n/a | yes |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | A unique prefix used for naming AWS resources (e.g., 'myorg-prod'). | `string` | n/a | yes |
-| <a name="input_route53_zone_id"></a> [route53\_zone\_id](#input\_route53_zone_id) | The ID of the public Route53 hosted zone where the application DNS record will be created. | `string` | n/a | yes |
-| <a name="input_route53_zone_name"></a> [route53\_zone\_name](#input\_route53_zone_name) | The name of the public Route53 hosted zone (e.g., 'example.com'). | `string` | n/a | yes |
-| <a name="input_site_token"></a> [site\_token](#input\_site_token) | The Site Token obtained from your Foxglove Site settings. Required for API authentication. | `string` | n/a | yes |
+| <a name="input_route53_zone_id"></a> [route53\_zone\_id](#input\_route53\_zone\_id) | The ID of the public Route53 hosted zone where the application DNS record will be created. | `string` | n/a | yes |
+| <a name="input_route53_zone_name"></a> [route53\_zone\_name](#input\_route53\_zone\_name) | The name of the public Route53 hosted zone (e.g., 'example.com'). | `string` | n/a | yes |
+| <a name="input_site_token"></a> [site\_token](#input\_site\_token) | The Site Token obtained from your Foxglove Site settings. Required for API authentication. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of additional tags to apply to created resources. | `map(string)` | `{}` | no |
-| <a name="input_vpc_availability_zones_count"></a> [vpc\_availability\_zones\_count](#input\_vpc_availability_zones_count) | Number of Availability Zones to use for the VPC and EKS subnets (max 3 recommended). | `number` | `3` | no |
-| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc_cidr) | The CIDR block for the VPC. | `string` | `"10.0.0.0/16"` | no |
+| <a name="input_vpc_availability_zones_count"></a> [vpc\_availability\_zones\_count](#input\_vpc\_availability\_zones\_count) | Number of Availability Zones to use for the VPC and EKS subnets (max 3 recommended). | `number` | `3` | no |
+| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | The CIDR block for the VPC. | `string` | `"10.0.0.0/16"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_application_url"></a> [application\_url](#output\_application_url) | The URL where the Foxglove Primary Site application is accessible. |
-| <a name="output_eks_cluster_certificate_authority_data"></a> [eks\_cluster\_certificate\_authority\_data](#output\_eks_cluster_certificate_authority_data) | Base64 encoded certificate data required to communicate with the cluster. |
-| <a name="output_eks_cluster_endpoint"></a> [eks\_cluster\_endpoint](#output\_eks_cluster_endpoint) | The endpoint for the created EKS cluster's Kubernetes API server. |
-| <a name="output_eks_cluster_name"></a> [eks\_cluster\_name](#output\_eks_cluster_name) | The name of the created EKS cluster. |
-| <a name="output_eks_oidc_provider_arn"></a> [eks\_oidc\_provider\_arn](#output\_eks_oidc_provider_arn) | The ARN of the EKS cluster OpenID Connect provider. |
-| <a name="output_inbox_bucket_name"></a> [inbox\_bucket\_name](#output\_inbox_bucket_name) | The name of the S3 bucket created for the inbox. |
-| <a name="output_lake_bucket_name"></a> [lake\_bucket\_name](#output\_lake_bucket_name) | The name of the S3 bucket created for the data lake. |
-| <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc_id) | The ID of the VPC created for the deployment. |
+| <a name="output_application_url"></a> [application\_url](#output\_application\_url) | The URL where the Foxglove Primary Site application is accessible. |
+| <a name="output_eks_cluster_certificate_authority_data"></a> [eks\_cluster\_certificate\_authority\_data](#output\_eks\_cluster\_certificate\_authority\_data) | Base64 encoded certificate data required to communicate with the cluster. |
+| <a name="output_eks_cluster_endpoint"></a> [eks\_cluster\_endpoint](#output\_eks\_cluster\_endpoint) | The endpoint for the created EKS cluster's Kubernetes API server. |
+| <a name="output_eks_cluster_name"></a> [eks\_cluster\_name](#output\_eks\_cluster\_name) | The name of the created EKS cluster. |
+| <a name="output_eks_oidc_provider_arn"></a> [eks\_oidc\_provider\_arn](#output\_eks\_oidc\_provider\_arn) | The ARN of the EKS cluster OpenID Connect provider. |
+| <a name="output_inbox_bucket_name"></a> [inbox\_bucket\_name](#output\_inbox\_bucket\_name) | The name of the S3 bucket created for the inbox. |
+| <a name="output_lake_bucket_name"></a> [lake\_bucket\_name](#output\_lake\_bucket\_name) | The name of the S3 bucket created for the data lake. |
+| <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | The ID of the VPC created for the deployment. |
 <!-- END_TF_DOCS -->
 
 ## Development
