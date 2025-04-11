@@ -1,1 +1,0 @@
-# terraform-aws-primary-site
